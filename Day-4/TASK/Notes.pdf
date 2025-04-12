@@ -1,0 +1,131 @@
+Docker & Microservices Overview
+What is Docker?
+Docker is a containerization tool that helps create portable, platform-independent applications.
+
+It uses OS-level virtualization to effectively utilize resources.
+
+Docker reduces server costs and allows applications to run anywhere.
+
+Architecture Shift: Monolithic to Microservices
+Monolithic Applications
+Single-tier architecture: Web server, Application server, and Database server run together on a single server.
+
+Issues:
+
+Tightly coupled.
+
+If any module fails, the entire application goes down.
+
+Microservices
+Application is broken down into independent modules/services.
+
+Each service runs in its own container with:
+
+Individual Dockerfile
+
+Docker image
+
+Docker container
+
+Advantages:
+
+Loosely coupled.
+
+If one service fails, other services remain unaffected.
+
+Challenges:
+
+Each service may require a separate server — hence more infrastructure costs.
+
+Docker helps mitigate these costs by allowing multiple services to run in isolated containers on the same server.
+
+Key Docker Concepts
+Container
+A lightweight VM or server to run applications.
+
+Dockerfile
+A text document containing instructions on how to build a Docker image.
+
+Docker Image
+A template containing:
+
+Source code
+
+Dependencies
+
+Configurations
+
+Libraries
+
+Platform details
+
+Follows the principle: "Build once, run anywhere."
+
+Docker Hub
+A cloud-based registry to store and share Docker images.
+
+Docker Commands
+docker ps – Shows running containers.
+
+docker ps -a – Shows all containers (running and stopped).
+
+Detached Mode / Daemon Containers
+Run containers in the background using -d flag.
+
+Useful for microservices that need to run in separate code environments.
+
+Port Numbers
+User-defined range: 0 - 65535
+
+Port defines how applications are accessed via browser.
+
+Example: 3002
+
+Instructions in a Dockerfile
+FROM – Defines base/parent image (must be the first instruction).
+
+COPY – Copies files/folders from local to Docker image.
+
+ADD – Similar to COPY, also supports downloading content from URLs.
+
+RUN – Installs dependencies.
+
+.dockerignore – Excludes files from being copied into the image.
+
+CMD – Default command to run the application (accepts runtime args).
+
+ENTRYPOINT – Entry to the application (does not allow runtime args).
+
+EXPOSE – Specifies port the application runs on.
+
+ENV – Defines environment variables.
+
+WORKDIR – Sets working directory inside container.
+
+USER – Creates or switches users.
+
+Deployment Preparation (As a DevOps Engineer)
+To deploy Docker containers:
+
+Identify base image of the application.
+
+Create a working directory.
+
+Copy dependencies into the Docker image.
+
+Install required packages.
+
+Copy the source code from the local machine into the image.
+
+Expose the required port number.
+
+Define the startup command (CMD or ENTRYPOINT).
+
+Also collect:
+
+Environment variables
+
+Port numbers
+
+Database endpoints
+

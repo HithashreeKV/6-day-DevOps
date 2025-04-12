@@ -1,0 +1,126 @@
+Key Concepts of Cloud and AWS
+Fast Delivery
+Cloud services offer faster deployment and delivery of resources, improving time-to-market.
+
+Quality
+Reliable infrastructure ensures consistent performance and minimal downtime.
+
+Lesser Spending
+Pay-as-you-go model helps in reducing upfront costs and unnecessary spending.
+
+Availability
+Services are accessible from anywhere with an internet connection.
+
+Cloud as Remote Services
+Cloud computing provides services remotely over the internet such as computing power, storage, and software.
+
+AWS & Data Centers
+AWS (Amazon Web Services)
+Leading cloud service provider offering infrastructure, platform, and software services.
+
+Data Centers in India
+
+Mumbai
+
+Hyderabad
+
+What is a Data Center?
+A data center is a collection of servers and storage systems maintained by a cloud provider.
+
+Cloud Service Models
+IaaS (Infrastructure as a Service)
+Provides virtualized computing resources over the internet (e.g., Amazon EC2).
+
+PaaS (Platform as a Service)
+Offers a platform allowing customers to develop, run, and manage applications (e.g., Elastic Beanstalk).
+
+SaaS (Software as a Service)
+Delivers software over the internet on a subscription basis (e.g., Gmail, Google Docs).
+
+AWS Key Features
+Auto Scaling
+Automatically adjusts computing capacity based on demand.
+
+Availability
+AWS ensures 99.11% uptime for most services.
+
+On-Demand
+Resources are provisioned and billed as needed.
+
+Elastic Compute Cloud (EC2)
+Scalable virtual servers in the AWS cloud.
+
+Containers & Kubernetes
+
+EKS (Elastic Kubernetes Service)
+The most trusted way to run and scale Kubernetes clusters on AWS.
+
+Linux Server Configuration & Deployment
+OS & Server Setup Required for Application Deployment
+Without a properly configured OS and server environment, deployment cannot happen.
+
+Popular Linux Server Families:
+
+Red Hat Family:
+Includes Amazon Linux, Oracle Linux, RHEL, SUSE Linux
+Uses httpd (daemon) to handle web services and responses.
+
+Debian Family:
+Includes Ubuntu and Debian OS
+Uses apache2 or nginx servers.
+
+Deployment Process
+Common Commands Used
+bash
+Copy
+Edit
+# Connect to EC2 instance using a key
+chmod 400 "Hithashree-webserver.ppk"
+ssh -i "Hithashree-webserver.ppk" ec2-user@ec2-51-20-55-106.eu-north-1.compute.amazonaws.com
+
+# Gain sudo privileges
+visudo
+sudo su
+
+# Install Apache Web Server
+yum install httpd
+which httpd
+
+# Start Apache service
+service httpd start
+service httpd status
+
+# Install Git and clone repository
+yum install git -y
+git clone -b master https://github.com/HithashreeKV/Coursevita-Retail-Project.git
+git clone -b main https://github.com/HithashreeKV/Oracle-Training-Retail.git
+
+# Navigate to the cloned project
+cd Oracle-Training-Retail
+
+# Copy project files to Apache root directory
+cp -r . /var/www/html
+
+# Restart Apache
+service httpd restart
+History of Commands Executed
+bash
+Copy
+Edit
+ec2-user@ec2-51-20-55-106.eu-north-1.compute.amazonaws.com   ---from aws 
+
+    1  visudo
+    2  yum install httpd
+    3  which httpd
+    4  service httpd status
+    5  service httpd start
+    6  service httpd status
+    7  git clone -b https://github.com/HithashreeKV/Coursevita-Retail-Project.git
+    8  yum install git -y
+    9  git clone -b https://github.com/HithashreeKV/Coursevita-Retail-Project.git
+   10  git clone -b master https://github.com/HithashreeKV/Coursevita-Retail-Project.git
+   11  ls
+   12  cd Coursevita-Retail-Project
+   13  ls
+   14  cp -r . /var/www/html
+   15  history

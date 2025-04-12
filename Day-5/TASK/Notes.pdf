@@ -1,0 +1,132 @@
+Containers: Limitations
+Containers do not support:
+
+Auto Scaling
+
+Scale Up: When traffic increases, more servers are required.
+
+Types of Scaling:
+
+Vertical Scaling: Increase system resources (CPU, RAM).
+
+Horizontal Scaling (Auto Scaling): Add additional servers to existing infrastructure.
+
+Scale Down: When traffic reduces, remove unnecessary servers.
+
+Containers are not compatible with horizontal auto scaling.
+
+Load Balancing
+
+Containers don’t handle automatic distribution of incoming traffic, which can lead to downtime if a container crashes.
+
+Self-Healing
+
+If a container fails, there’s no built-in recovery or restart mechanism.
+
+What is Kubernetes?
+Kubernetes is a container orchestration tool designed to manage and automate container-based applications.
+
+Functions of Kubernetes:
+
+Orchestration – Manages container scheduling and execution.
+
+Auto Scaling – Scales pods up/down automatically based on demand.
+
+Load Balancing – Distributes traffic across pods.
+
+Self Healing – Automatically restarts failed containers.
+
+Platform Independent: Kubernetes can run on any cloud or on-premise environment.
+
+Setting Up Kubernetes
+Create a Jump Server (optional for remote access/setup).
+
+Install Components:
+
+kubectl – Kubernetes command-line tool.
+
+EKS CLI – For managing AWS EKS (Elastic Kubernetes Service).
+
+AWS CLI – For AWS cloud interaction.
+
+Kubernetes Cluster
+Cluster: Group of nodes managed by Kubernetes.
+
+Master Node: Controls and manages the cluster.
+
+Worker Nodes: Run applications (pods).
+
+Minimum: 1 Master Node and 1 Worker Node.
+
+Types of Kubernetes Clusters
+On-Premises Cluster
+
+Managed by your organization.
+
+You are responsible for everything (uptime, fixes, scaling, etc.).
+
+Cloud-Managed Cluster
+
+Managed by a cloud provider (e.g., AWS EKS).
+
+You focus on app deployment and maintenance.
+
+AWS EKS (Elastic Kubernetes Service)
+Managed Kubernetes service provided by AWS.
+
+Simplifies cluster creation and management.
+
+Master Node Components
+API Server (Hero)
+
+Entry point for all management commands (via kubectl).
+
+Plays a key role in auto scaling.
+
+etcd
+
+Distributed key-value database.
+
+Stores all cluster data and configuration.
+
+Controller
+
+Continuously monitors and compares the desired state with the actual state.
+
+Scheduler
+
+Assigns pods to appropriate nodes.
+
+Ensures efficient resource usage.
+
+Worker Node Components
+Kubelet
+
+Agent that communicates with the master node.
+
+Responsible for pod creation and lifecycle monitoring.
+
+Container Runtime
+
+Typically Docker.
+
+Pulls images, creates and starts containers.
+
+Kube-Proxy
+
+Handles networking in worker nodes.
+
+Manages service exposure and routing.
+
+Kubernetes Manifest Files
+Used for automating deployments.
+
+Fields in Manifest Files:
+
+apiVersion: Specifies the API version (schema of the object).
+
+kind: Type of Kubernetes object being created (e.g., Pod, Service).
+
+metadata: Contains the name and metadata of the object.
+
+spec: Defines the desired behavior or configuration of the object.

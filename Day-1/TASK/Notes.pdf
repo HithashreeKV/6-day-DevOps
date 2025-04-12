@@ -1,0 +1,46 @@
+Session 1: Deploying Java Web Application using Jenkins and Apache Tomcat
+This session explains how to manually deploy a Java web application (EcommerceApp.war) using Jenkins and Apache Tomcat. The process includes installing the required Jenkins plugin, deploying the WAR file, manually extracting it, restarting Tomcat, and accessing the application through a browser.
+
+Available Plugin
+Before beginning the deployment process, ensure the necessary plugin is available:
+
+Plugin Required:
+
+Deploy to Container
+
+Navigate to the Plugins section in Jenkins
+
+Locate Deploy to Container and click on Install
+
+Step 1: Copying the WAR File
+After building the project in Jenkins, a EcommerceApp.war file is generated.
+
+This WAR file must be copied to Tomcat’s webapps/ directory, which is the default directory Tomcat uses to deploy web applications.
+
+Step 2: Extracting the WAR File
+Normally, Tomcat automatically extracts WAR files into a folder during startup.
+
+In this case, the WAR file was not automatically extracted.
+
+Therefore, the extraction was performed manually using the following command:
+
+bash
+Copy
+Edit
+sudo unzip EcommerceApp.war -d EcommerceApp/
+This command created a folder named EcommerceApp/ inside the webapps/ directory, containing all the necessary application files.
+
+Step 3: Restarting Tomcat
+After extracting the WAR file, Tomcat needed to reload the application.
+
+To do this, Tomcat was restarted using the following commands:
+
+bash
+Copy
+Edit
+sudo ./catalina.sh stop
+sudo ./catalina.sh start
+Restarting Tomcat ensures that the server detects the newly extracted files and deploys the application correctly.
+
+Step 4: Accessing the Application
+After successful deployment, the application was accessed via the browser at:

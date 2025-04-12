@@ -1,0 +1,152 @@
+Terraform Overview
+Terraform is an Infrastructure as Code (IaC) tool used with AWS to automate the provisioning of cloud resources.
+
+It helps in creating resources such as:
+
+EC2 instances
+
+VPCs (Virtual Private Clouds)
+
+Subnets
+
+Internet Gateways
+
+Load Balancers
+
+Database Servers
+
+Installation & Setup
+Install Terraform on your Windows machine.
+
+Set Terraform Path in system environment variables.
+
+Install AWS CLI (Command Line Interface).
+
+Configure AWS Credentials using:
+
+bash
+Copy
+Edit
+aws configure
+You’ll need:
+
+Access Key
+
+Secret Access Key
+
+Region
+
+AWS IAM Setup
+Go to AWS Console > IAM > Users.
+
+Create a new user.
+
+Assign appropriate permissions (e.g., AdministratorAccess).
+
+Generate Access Key & Secret for programmatic access.
+
+Terraform Script Structure
+Provider Block – Specifies the cloud provider.
+
+hcl
+Copy
+Edit
+provider "aws" {
+  region = "us-east-1"
+}
+Resource Block – Defines what resources to create (e.g., EC2).
+
+hcl
+Copy
+Edit
+resource "aws_instance" "example" {
+  ...
+}
+Variable Block – Used to pass parameters into the script.
+
+3 types of variables (not detailed here, but usually: input, environment, default).
+
+Output Block (output.tf) – Used to print values like:
+
+Public IP
+
+Private IP
+
+VPC ID
+
+Important Parameters for EC2 with Terraform
+Make sure to pass:
+
+Amazon Machine Image (AMI) ID
+
+Instance Type
+
+Key Pair Name
+
+Storage
+
+Instance Name
+
+Use the command:
+
+bash
+Copy
+Edit
+terraform plan
+This previews the infrastructure changes.
+
+VPC Requirements
+Should include:
+
+Name
+
+IP Addressing Schema
+
+Docker Overview
+Docker is a containerization tool that enables:
+
+Portability
+
+Efficient resource usage
+
+Platform independence
+
+Uses OS-level virtualization.
+
+Helps reduce server costs.
+
+Ensures applications can run anywhere (build once, run anywhere).
+
+Monolithic vs Microservices
+Monolithic Application:
+
+Single-tier architecture.
+
+Combines Web server, App server, DB in one.
+
+Drawback: If one module fails, the entire app fails due to tight coupling.
+
+Microservices:
+
+Breaks down application into independent services.
+
+Each service has:
+
+Its own Dockerfile
+
+Image
+
+Container
+
+Loose coupling ensures:
+
+One service failure doesn’t affect others.
+
+More resilience and scalability.
+
+Key Takeaways
+Terraform automates cloud resource provisioning.
+
+Docker offers platform independence and supports microservices.
+
+Monolithic apps are tightly coupled and fragile compared to microservices.
